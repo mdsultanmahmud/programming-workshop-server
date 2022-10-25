@@ -20,3 +20,12 @@ app.get('/courses', (req, res) =>{
     res.send(courses)
 })
 
+
+// load single course 
+app.get('/courses/:courseId', (req, res) =>{
+    const id = req.params.courseId 
+    const singleCourse = courses.find(course => course.index == id)
+    res.send(singleCourse)
+})
+
+
