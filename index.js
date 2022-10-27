@@ -6,7 +6,7 @@ const cors = require('cors')
 app.use(cors())
 
 const courses = require('./data/courses.json')
-
+const project = require('./data/demoProject.json')
 app.get('/', (req, res) =>{
     res.send('I am creating a server for programming workshop website!!')
 })
@@ -26,6 +26,10 @@ app.get('/courses/:courseId', (req, res) =>{
     const id = req.params.courseId 
     const singleCourse = courses.find(course => course.index == id)
     res.send(singleCourse)
+})
+
+app.get('/project', (req, res) =>{
+    res.send(project)
 })
 
 
